@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Header } from './header/header';
+import { ServerStatus } from './dashboard/server-status/server-status';
+import { TrafficChart } from './dashboard/traffic-chart/traffic-chart';
+import { SupportTicket } from './dashboard/support-ticket/support-ticket';
+import { DashboardItem } from './dashboard/dashboard-item/dashboard-item';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [Header, ServerStatus, TrafficChart, SupportTicket, DashboardItem],
 })
-export class App {
-  protected readonly title = signal('ticket-management-app');
-}
+export class App {}
