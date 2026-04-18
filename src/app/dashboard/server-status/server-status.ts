@@ -22,7 +22,7 @@ export class ServerStatus implements OnInit {
     this.intervalData = setInterval(() => {
       const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
       this.currentStatus.set(randomStatus);
-      console.log(`Server status changed to: ${randomStatus}`);
+      // console.log(`Server status changed to: ${randomStatus}`);
     }, 5000);
 
     this.destroyRef.onDestroy(() => {
