@@ -1,23 +1,11 @@
-<form action="" (ngSubmit)="submitTicket(titleInput, requestInput)" #ticketForm>
+<form action="" (ngSubmit)="submitTicket()" #ticketForm>
   <app-control labelText="Title" for="title">
-    <input
-      type="text"
-      name="title"
-      id="title"
-      #input
-      #titleInput
-      placeholder="Enter the title of your issue"
-    />
+    <input type="text" name="title" id="title" #input [(ngModel)]="titleInput"
+      placeholder="Enter the title of your issue" />
   </app-control>
   <app-control labelText="Request" for="request">
-    <textarea
-      name="request"
-      id="request"
-      rows="3"
-      #input
-      #requestInput
-      placeholder="Describe your issue in detail"
-    ></textarea>
+    <textarea name="request" id="request" rows="3" #input [(ngModel)]="requestInput"
+      placeholder="Describe your issue in detail"></textarea>
   </app-control>
   <p>
     <button appButton>Submit Ticket<span class="icon"> → </span></button>
