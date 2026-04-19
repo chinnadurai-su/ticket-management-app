@@ -15,9 +15,13 @@ export class NewTicket {
   // @Output() ticketSubmitted = new EventEmitter<{ title: string; request: string }>();
   ticketSubmitted = output<{ title: string; request: string }>()
 
-  submitTicket(title: HTMLInputElement, request: HTMLTextAreaElement) {
-    console.log('Ticket submitted:', { title: title.value, request: request.value });
-    this.ticketSubmitted.emit({ title: title.value, request: request.value });
-    this.ticketForm()?.nativeElement.reset();
+  titleInput = '';
+  requestInput = '';
+
+  submitTicket() {
+    console.log('Ticket submitted:', { title: this.titleInput, request: this.requestInput });
+    this.ticketSubmitted.emit({ title: this.titleInput, request: this.requestInput });
+    this.titleInput = '';
+    this.requestInput = '';
   }
 }
